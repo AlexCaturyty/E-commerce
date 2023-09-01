@@ -1,0 +1,108 @@
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+  .navbar {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+      padding: 15px;
+      background-color: rgb(4, 33, 93);
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+      margin-bottom: 50px;
+
+  }
+
+  .cart {
+      position: fixed;
+      top: 0;
+      right: -360px;
+      background-color: rgb(4, 33, 93);
+      height: 100%;
+      width: 360px;
+      transition: right 0.3s ease-in-out;
+      border-left: 1px solid rgb(0, 67, 201);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+  }
+
+  .cart.open {
+      right: 0;
+  }
+
+  .cart-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+  }
+  .cart-header p{
+      color: white;
+  }
+
+  .cart-products {
+      display: flex;
+      background-color: antiquewhite;
+      border-radius: 10px;
+      position: relative;
+  }
+
+  .item-delete{
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  .cart-products img {
+
+      width: 100px;
+      height: 130px;
+
+  }
+
+  .products-details p{
+    color: rgb(80, 79, 79);
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  .products-details p:nth-child(2){
+    color: rgb(90, 89, 89);
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  .cart button {
+      background-color: rgb(255, 255, 255);
+      padding: 12px 40px;
+      border-radius: 10px;
+      border: none;
+  }
+
+  .navbar h1 {
+      font-family: 'Caveat';
+      color: rgb(255, 255, 255);
+      margin-left: 40px;
+  }
+
+  .cart-header button {
+      background: none;
+      border: 0px;
+  }
+
+  ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin-right: 40px;
+  }
+
+  .icon {
+      font-size: 25px;
+      cursor: pointer;
+      color: rgb(255, 255, 255);
+
+
+  }
