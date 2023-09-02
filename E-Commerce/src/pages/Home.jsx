@@ -5,12 +5,18 @@ import Products from '../components/Products/Products'
 import { useState } from 'react'
 
 const Home = () => {
-    const [show,setshow] = useState(true);
+    const [cart, setCart] = useState([]);
+
+    const addToCart = (product) => {
+      setCart([...cart, product]);
+    };
+
     return (
         <div id='Homepage'>
             <div className='components'>
-           <Navbar setshow={setshow}/>
-           {show ? <Products/> : 'Cart'}
+            <Navbar cart={cart} />
+            <Products addToCart={addToCart} />
+            
            </div>
         </div>
     )

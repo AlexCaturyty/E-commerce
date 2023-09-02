@@ -5,7 +5,7 @@ import LeituraDeVerao from '../../assets/images/livro_leitura_de_verao.jpg'
 import QuebrandoGelo from '../../assets/images/livro_quebrando-gelo.jpg'
 import LivrodosHomens from '../../assets/images/livro_clube_dos_homens.jpg'
 
-const Products = () => {
+const Products = ({addToCart}) => {
     const livros = [
         {
             id: 1,
@@ -68,29 +68,25 @@ const Products = () => {
         },
     ];
 
-    const [cart,setcart] = useState([]);
 
-    const handleClick = (livro) => {
-        cart.push(livro);
-        console.log(cart);
-    }
+    
 
     return (
         <div>
-            <main className="body-container">
-                <div className="container-product">
-                    {livros.map((livro, index) => (
-                        <div key={index} className={`product-${index + 1}`} handleClick ={handleClick}>
-                            <img src={livro.imagem} alt={livro.nome} className='imagem' />
-                            <p className='nome'>{livro.nome}</p>
-                            <p className='preco'>R$ {livro.preco}</p>
-                            <button onClick={() => handleClick(livro)}> Adicionar ao carrinho</button>
-                        </div>
-                    ))}
+          <main className="body-container">
+            <div className="container-product">
+              {livros.map((livro, index) => (
+                <div key={index} className={`product-${index + 1}`}>
+                  <img src={livro.imagem} alt={livro.nome} className="imagem" />
+                  <p className="nome">{livro.nome}</p>
+                  <p className="preco">R$ {livro.preco}</p>
+                  <button onClick={() => addToCart(livro)}>Adicionar ao carrinho</button>
                 </div>
-            </main>
+              ))}
+            </div>
+          </main>
         </div>
-    );
-};
+      );
+    };
 
 export default Products;
