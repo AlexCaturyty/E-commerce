@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../Products/Products.css'
 import Sapiens from '../../assets/images/livro_sapiens.jpg'
 import LeituraDeVerao from '../../assets/images/livro_leitura_de_verao.jpg'
@@ -68,16 +68,23 @@ const Products = () => {
         },
     ];
 
+    const [cart,setcart] = useState([]);
+
+    const handleClick = (livro) => {
+        cart.push(livro);
+        console.log(cart);
+    }
+
     return (
         <div>
             <main className="body-container">
                 <div className="container-product">
                     {livros.map((livro, index) => (
-                        <div key={index} className={`product-${index + 1}`}>
+                        <div key={index} className={`product-${index + 1}`} handleClick ={handleClick}>
                             <img src={livro.imagem} alt={livro.nome} className='imagem' />
                             <p className='nome'>{livro.nome}</p>
                             <p className='preco'>R$ {livro.preco}</p>
-                            <button >Adicionar ao carrinho</button>
+                            <button onClick={() => handleClick(livro)}> Adicionar ao carrinho</button>
                         </div>
                     ))}
                 </div>

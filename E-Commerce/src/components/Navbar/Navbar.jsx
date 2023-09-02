@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import '../../components/NavBar/NavBar.css';
+import '../../components/Navbar/Navbar.css';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai'
 import { BsPerson } from 'react-icons/bs'
 import QuebrandoGelo from '../../assets/images/livro_quebrando-gelo.jpg'
 
-
-
-
-const Navbar = () => {
+const Navbar = ({setshow}) => {
 
     const [carrinhoAberto, setCarrinhoAberto] = useState(false);
 
@@ -43,10 +40,12 @@ const Navbar = () => {
                 <p className='total-price'>R$ 250</p>
                 <button>FINALIZAR COMPRA</button>
             </div>
-            <div className='navbar'>
-                <h1>Nana Livros</h1>
+            <div className='navbar' >
+                <div onClick={() => setshow(true)}>
+                    <h1>Nana Livros</h1>
+                </div>
                 <ul>
-                    <li>
+                    <li onClick={ () => setshow(false)}>
                         <AiOutlineShoppingCart className="icon" onClick={abrircarrinho} />
                     </li>
                     <li>
