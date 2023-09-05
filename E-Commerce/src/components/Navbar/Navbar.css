@@ -43,17 +43,12 @@
 
   .cart-products {
       display: flex;
-      background-color: antiquewhite;
+      flex-direction: column;
       border-radius: 10px;
       position: relative;
+      
   }
 
-  .item-delete{
-    position: absolute;
-    top: 12px;
-    right: 10px;
-    cursor: pointer;
-  }
 
   .cart-products img {
 
@@ -62,16 +57,13 @@
 
   }
 
-  .products-details p{
-    color: rgb(80, 79, 79);
-    font-weight: bold;
+  .cart-item{
+    display: flex;
     padding: 10px;
-  }
+    margin-bottom: 15px;
+    background-color: rgb(255, 255, 255);
+    
 
-  .products-details p:nth-child(2){
-    color: rgb(90, 89, 89);
-    font-weight: bold;
-    padding: 10px;
   }
 
   .cart button {
@@ -79,6 +71,10 @@
       padding: 12px 40px;
       border-radius: 10px;
       border: none;
+  }
+
+  .products-details{
+    padding: 10px;
   }
 
   .navbar h1 {

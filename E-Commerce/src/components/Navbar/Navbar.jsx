@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../components/Navbar/Navbar.css';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
-import QuebrandoGelo from '../../assets/images/livro_quebrando-gelo.jpg';
+import {GrFormAdd} from 'react-icons/gr';
 
 const Navbar = ({ cart }) => {
   const [carrinhoAberto, setCarrinhoAberto] = useState(false);
@@ -15,7 +15,6 @@ const Navbar = ({ cart }) => {
     setCarrinhoAberto(false);
   };
 
-  // Função para calcular o total do preço dos livros no carrinho
   const calcularTotal = () => {
     let total = 0;
     for (const item of cart) {
@@ -40,8 +39,13 @@ const Navbar = ({ cart }) => {
                 <p>{item.nome}</p>
                 <p>R$: {item.preco}</p>
               </div>
+              <div className=''>
+                    <GrFormAdd/>
+              </div>
             </div>
+              
           ))}
+          
         </div>
 
         <p className='total-price'>R$ {calcularTotal()}</p>
