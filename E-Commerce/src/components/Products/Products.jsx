@@ -10,7 +10,7 @@ const Products = ({addToCart}) => {
         {
             id: 1,
             nome: "Sapiens (Nova edição)",
-            preco: "47,46",
+            preco: 47.46,
             imagem: Sapiens,
             Romance: false,
             Ficcao: false,
@@ -19,7 +19,7 @@ const Products = ({addToCart}) => {
         {
             id: 2,
             nome: "Leitura de verão",
-            preco: "39,90",
+            preco: 39.90,
             imagem: LeituraDeVerao,
             Romance: true,
             Ficcao: true,
@@ -29,7 +29,7 @@ const Products = ({addToCart}) => {
         {
             id: 3,
             nome: "Quebrando o Gelo",
-            preco: "39,90",
+            preco: 39.90,
             imagem: QuebrandoGelo,
             Romance: true,
             Ficcao: true,
@@ -39,7 +39,7 @@ const Products = ({addToCart}) => {
         {
             id: 4,
             nome: "Clube do livro dos homens",
-            preco: "39,90",
+            preco: 39.90,
             imagem: LivrodosHomens,
             Romance: true,
             Ficcao: true,
@@ -49,7 +49,7 @@ const Products = ({addToCart}) => {
         {
             id: 5,
             nome: "Loucos por livros",
-            preco: "39,90",
+            preco: 39.90,
             imagem: LeituraDeVerao,
             Romance: true,
             Ficcao: true,
@@ -59,7 +59,7 @@ const Products = ({addToCart}) => {
         {
             id: 5,
             nome: "Loucos por livros",
-            preco: "39,90",
+            preco: 39.90,
             imagem: LeituraDeVerao,
             Romance: true,
             Ficcao: true,
@@ -69,7 +69,7 @@ const Products = ({addToCart}) => {
     ];
 
 
-    
+<Products addToCart={addToCart} />
 
     return (
         <div>
@@ -79,7 +79,7 @@ const Products = ({addToCart}) => {
                 <div key={index} className={`product-${index + 1}`}>
                   <img src={livro.imagem} alt={livro.nome} className="imagem" />
                   <p className="nome">{livro.nome}</p>
-                  <p className="preco">R$ {livro.preco}</p>
+                  <p className="preco">R$ {livro.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
                   <button onClick={() => addToCart(livro)}>Adicionar ao carrinho</button>
                 </div>
               ))}

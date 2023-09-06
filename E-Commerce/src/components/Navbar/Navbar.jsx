@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import '../../components/Navbar/Navbar.css';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
-import {GrFormAdd} from 'react-icons/gr';
+import { GrFormAdd } from 'react-icons/gr';
 
-const Navbar = ({ cart }) => {
+const Navbar = ({ cart, addToCart }) => {
   const [carrinhoAberto, setCarrinhoAberto] = useState(false);
 
   const abrircarrinho = () => {
@@ -18,10 +18,11 @@ const Navbar = ({ cart }) => {
   const calcularTotal = () => {
     let total = 0;
     for (const item of cart) {
-      total += item.preco;
+      total += parseFloat(item.preco) * item.quantidade; 
     }
     return total;
   };
+  
 
   return (
     <div>
@@ -38,21 +39,20 @@ const Navbar = ({ cart }) => {
               <div className='products-details'>
                 <p>{item.nome}</p>
                 <p>R$: {item.preco}</p>
-              </div>
-              <div className=''>
-                    <GrFormAdd/>
+                <div className=''>
+                  <GrFormAdd onClick={() => addToCart(item)} />
+                  <span>{item.quantidade}</span>
+                </div>
               </div>
             </div>
-              
           ))}
-          
         </div>
 
-        <p className='total-price'>R$ {calcularTotal()}</p>
+        <p className='total-price'>Total: R$ {calcularTotal().toFixed(2)}</p>
         <button>FINALIZAR COMPRA</button>
       </div>
       <div className='navbar'>
-        <div >
+        <div>
           <h1>Nana Livros</h1>
         </div>
         <ul>
