@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import '../../components/Navbar/Navbar.css';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
-import { GrFormAdd } from 'react-icons/gr';
+import { GrFormAdd, GrFormSubtract } from 'react-icons/gr';
 
-const Navbar = ({ cart, addToCart }) => {
+const Navbar = ({ cart, addToCart, RemoveToCart }) => {
   const [carrinhoAberto, setCarrinhoAberto] = useState(false);
 
   const abrircarrinho = () => {
@@ -23,6 +23,8 @@ const Navbar = ({ cart, addToCart }) => {
     return total;
   };
   
+  <Navbar addToCart={addToCart} RemoveToCart={RemoveToCart} />
+
 
   return (
     <div>
@@ -42,6 +44,7 @@ const Navbar = ({ cart, addToCart }) => {
                 <div className=''>
                   <GrFormAdd onClick={() => addToCart(item)} />
                   <span>{item.quantidade}</span>
+                  <GrFormSubtract onClick={() => RemoveToCart(item)} />
                 </div>
               </div>
             </div>
