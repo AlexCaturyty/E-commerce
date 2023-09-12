@@ -80,7 +80,7 @@ const Products = ({addToCart}) => {
                   <img src={livro.imagem} alt={livro.nome} className="imagem" />
                   <p className="nome">{livro.nome}</p>
                   <p className="preco">R$ {livro.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
-                  <button onClick={() => addToCart(livro)}>Adicionar ao carrinho</button>
+                  <button onClick={() => addToCart(livro)}>Adicionar ao carrinho </button>
                 </div>
               ))}
             </div>

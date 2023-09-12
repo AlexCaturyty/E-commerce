@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import '../../components/Navbar/Navbar.css';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
-import { GrFormAdd, GrFormSubtract } from 'react-icons/gr';
+import { GrFormAdd, GrFormSubtract, GrClose } from 'react-icons/gr';
 
-const Navbar = ({ cart, addToCart, RemoveToCart }) => {
+const Navbar = ({ cart, addToCart, RemoveToCart, DeleteToCart }) => {
   const [carrinhoAberto, setCarrinhoAberto] = useState(false);
 
   const abrircarrinho = () => {
@@ -18,12 +18,12 @@ const Navbar = ({ cart, addToCart, RemoveToCart }) => {
   const calcularTotal = () => {
     let total = 0;
     for (const item of cart) {
-      total += parseFloat(item.preco) * item.quantidade; 
+      total += parseFloat(item.preco) * item.quantidade;
     }
     return total;
   };
-  
-  <Navbar addToCart={addToCart} RemoveToCart={RemoveToCart} />
+
+  <Navbar addToCart={addToCart} RemoveToCart={RemoveToCart} DeleteToCart={DeleteToCart} />
 
 
   return (
@@ -37,14 +37,23 @@ const Navbar = ({ cart, addToCart, RemoveToCart }) => {
         <div className='cart-products'>
           {cart.map((item) => (
             <div key={item.id} className='cart-item'>
+              <div className='Close'>
+                <GrClose onClick={() => DeleteToCart(item)} />
+              </div>
               <img src={item.imagem} alt={item.nome} />
               <div className='products-details'>
                 <p>{item.nome}</p>
                 <p>R$: {item.preco}</p>
-                <div className=''>
-                  <GrFormAdd onClick={() => addToCart(item)} />
-                  <span>{item.quantidade}</span>
-                  <GrFormSubtract onClick={() => RemoveToCart(item)} />
+                <div className='buttons'>
+                  <div className='AddandReduct'>
+                    <GrFormSubtract onClick={() => RemoveToCart(item)} />
+                  </div>
+                  <div className='Qtd'>
+                    <span>{item.quantidade}</span>
+                  </div>
+                  <div className='AddandReduct'>
+                    <GrFormAdd onClick={() => addToCart(item)} />
+                  </div>
                 </div>
               </div>
             </div>
