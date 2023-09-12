@@ -66,7 +66,7 @@ const Navbar = ({ cart, addToCart, RemoveToCart, DeleteToCart }) => {
           <p className='total-price'>Total: R$ {calcularTotal().toFixed(2)}</p>
 
 
-          <Link to="">
+          <Link to="/payment">
             FINALIZAR COMPRA</Link>
         </div>
       </div>
