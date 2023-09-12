@@ -3,6 +3,7 @@ import '../../components/Navbar/Navbar.css';
 import { AiOutlineShoppingCart, AiOutlineClose } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
 import { GrFormAdd, GrFormSubtract, GrClose } from 'react-icons/gr';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ cart, addToCart, RemoveToCart, DeleteToCart }) => {
   const [carrinhoAberto, setCarrinhoAberto] = useState(false);
@@ -43,15 +44,15 @@ const Navbar = ({ cart, addToCart, RemoveToCart, DeleteToCart }) => {
               <img src={item.imagem} alt={item.nome} />
               <div className='products-details'>
                 <p>{item.nome}</p>
-                <p>R$: {item.preco}</p>
+                <p>R$: {item.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
                 <div className='buttons'>
-                  <div className='AddandReduct'>
+                  <div className='AddAndReduct'>
                     <GrFormSubtract onClick={() => RemoveToCart(item)} />
                   </div>
                   <div className='Qtd'>
                     <span>{item.quantidade}</span>
                   </div>
-                  <div className='AddandReduct'>
+                  <div className='AddAndReduct'>
                     <GrFormAdd onClick={() => addToCart(item)} />
                   </div>
                 </div>
@@ -60,8 +61,14 @@ const Navbar = ({ cart, addToCart, RemoveToCart, DeleteToCart }) => {
           ))}
         </div>
 
-        <p className='total-price'>Total: R$ {calcularTotal().toFixed(2)}</p>
-        <button>FINALIZAR COMPRA</button>
+        <div className='footer-cart'>
+          <hr />
+          <p className='total-price'>Total: R$ {calcularTotal().toFixed(2)}</p>
+
+
+          <Link to="">
+            FINALIZAR COMPRA</Link>
+        </div>
       </div>
       <div className='navbar'>
         <div>
