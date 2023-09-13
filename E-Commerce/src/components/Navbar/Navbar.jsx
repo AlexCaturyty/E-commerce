@@ -21,10 +21,9 @@ const Navbar = ({ cart, addToCart, RemoveToCart, DeleteToCart }) => {
     for (const item of cart) {
       total += parseFloat(item.preco) * item.quantidade;
     }
+    
     return total;
   };
-
-  <Navbar addToCart={addToCart} RemoveToCart={RemoveToCart} DeleteToCart={DeleteToCart} />
 
 
   return (
@@ -36,7 +35,10 @@ const Navbar = ({ cart, addToCart, RemoveToCart, DeleteToCart }) => {
         </div>
 
         <div className='cart-products'>
-          {cart.map((item) => (
+          {cart.length === 0 ? (
+            <h1>O carrinho está vazio</h1>
+          ) : (
+          cart.map((item) => (
             <div key={item.id} className='cart-item'>
               <div className='Close'>
                 <GrClose onClick={() => DeleteToCart(item)} />
@@ -58,7 +60,8 @@ const Navbar = ({ cart, addToCart, RemoveToCart, DeleteToCart }) => {
                 </div>
               </div>
             </div>
-          ))}
+          ))
+          )}
         </div>
 
         <div className='footer-cart'>
@@ -76,6 +79,7 @@ const Navbar = ({ cart, addToCart, RemoveToCart, DeleteToCart }) => {
         </div>
         <ul>
           <li>
+          <div className='QtdInCart' onClick={abrircarrinho}>{cart.length}</div>
             <AiOutlineShoppingCart className='icon' onClick={abrircarrinho} />
           </li>
           <li>

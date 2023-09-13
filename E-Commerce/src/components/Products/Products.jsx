@@ -7,8 +7,8 @@ import LivrodosHomens from '../../assets/images/livro_clube_dos_homens.jpg';
 import { Button, Snackbar } from '@mui/material';
 
 const Products = ({ addToCart }) => {
-  const [showAlert, setShowAlert] = useState(false); 
-
+  const [showAlert, setShowAlert] = useState(false);
+  
   const livros = [
     {
       id: 1,
@@ -91,7 +91,7 @@ const Products = ({ addToCart }) => {
       </main>
       <Snackbar
         open={showAlert}
-        autoHideDuration={3000} 
+        autoHideDuration={3000} // Tempo em milissegundos que o alerta ficará visível
         onClose={handleCloseAlert}
         message="Produto adicionado ao carrinho com sucesso!"
       />
