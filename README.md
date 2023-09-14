@@ -4,13 +4,13 @@
     <tbody>
         <tr>
             <td>
-                <img src="E-Commerce/.github/img/Home.png" alt="Demonstração do projeto - Home" width="100%"/>
+                <img src="E-Commerce/.github/Home.png" alt="Demonstração do projeto - Home"/>
             </td>
             <td>
-                <img src="E-Commerce/.github/img/Cart.png" alt="Demonstração do projeto - Cart"  />
+                <img src="E-Commerce/.github/Cart.png" alt="Demonstração do projeto - Cart"  />
             </td>
             <td>
-                <img src="E-Commerce/.github/img/Payment.png" alt="Demonstração do projeto - Payment"  />
+                <img src="E-Commerce/.github/Payment.png" alt="Demonstração do projeto - Payment"  />
             </td>  
         </tr>
     </tbody>
@@ -22,13 +22,13 @@
     <tbody>
         <tr>
             <td>
-                <img src="E-Commerce/.github/img/Home - Mobile.png" alt="Demonstração do projeto - Home" />
+                <img src="E-Commerce/.github/Home - Mobile.png" alt="Demonstração do projeto - Home" />
             </td>
             <td>
-                <img src="E-Commerce/.github/img/Cart - Mobile.png" alt="Demonstração do projeto - Cart"  />
+                <img src="E-Commerce/.github/Cart - Mobile.png" alt="Demonstração do projeto - Cart"  />
             </td>
             <td>
-                <img src="E-Commerce/.github/img/Payment - Mobile.png" alt="Demonstração do projeto - Payment"  />
+                <img src="E-Commerce/.github/Payment - Mobile.png" alt="Demonstração do projeto - Payment"  />
             </td>  
         </tr>
     </tbody>
