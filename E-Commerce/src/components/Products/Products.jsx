@@ -4,6 +4,8 @@ import Sapiens from '../../assets/images/livro_sapiens.jpg';
 import LeituraDeVerao from '../../assets/images/livro_leitura_de_verao.jpg';
 import QuebrandoGelo from '../../assets/images/livro_quebrando-gelo.jpg';
 import LivrodosHomens from '../../assets/images/livro_clube_dos_homens.jpg';
+import LoucosPorLivro from '../../assets/images/livro_loucos_por_livros.jpg';
+import Imperfeitos from '../../assets/images/livro_imperfeitos.jpg';
 import { Button, Snackbar } from '@mui/material';
 
 const Products = ({ addToCart }) => {
@@ -50,7 +52,7 @@ const Products = ({ addToCart }) => {
       id: 5,
       nome: "Loucos por livros",
       preco: 39.90,
-      imagem: LeituraDeVerao,
+      imagem: LoucosPorLivro,
       Romance: true,
       Ficcao: true,
       NaoFiccao: false,
@@ -59,7 +61,7 @@ const Products = ({ addToCart }) => {
       id: 6,
       nome: "Loucos por livros",
       preco: 39.90,
-      imagem: LeituraDeVerao,
+      imagem: Imperfeitos,
       Romance: true,
       Ficcao: true,
       NaoFiccao: false,
@@ -91,7 +93,7 @@ const Products = ({ addToCart }) => {
       </main>
       <Snackbar
         open={showAlert}
-        autoHideDuration={3000} // Tempo em milissegundos que o alerta ficará visível
+        autoHideDuration={3000}
         onClose={handleCloseAlert}
         message="Produto adicionado ao carrinho com sucesso!"
       />

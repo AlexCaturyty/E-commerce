@@ -36,7 +36,7 @@ const Navbar = ({ cart, addToCart, RemoveToCart, DeleteToCart }) => {
 
         <div className='cart-products'>
           {cart.length === 0 ? (
-            <h1>O carrinho está vazio</h1>
+            <label>O carrinho está vazio</label>
           ) : (
           cart.map((item) => (
             <div key={item.id} className='cart-item'>
