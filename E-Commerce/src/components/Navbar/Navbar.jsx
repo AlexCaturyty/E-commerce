@@ -74,7 +74,7 @@ const Navbar = ({ cart, addToCart, RemoveToCart, DeleteToCart }) => {
         </div>
       </div>
       <div className='navbar'>
-        <div>
+        <div className='logo'>
           <h1>Nana Livros</h1>
         </div>
         <ul>
