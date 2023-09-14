@@ -4,13 +4,13 @@
     <tbody>
         <tr>
             <td>
-                <img src=".github/img/Home.png" alt="Demonstração do projeto - Home" />
+                <img src="E-Commerce/.github/img/Home.png" alt="Demonstração do projeto - Home" width="100%"/>
             </td>
             <td>
-                <img src=".github/img/Cart.png" alt="Demonstração do projeto - Cart"  />
+                <img src="E-Commerce/.github/img/Cart.png" alt="Demonstração do projeto - Cart"  />
             </td>
             <td>
-                <img src=".github/img/Payment.png" alt="Demonstração do projeto - Payment"  />
+                <img src="E-Commerce/.github/img/Payment.png" alt="Demonstração do projeto - Payment"  />
             </td>  
         </tr>
     </tbody>
@@ -22,14 +22,23 @@
     <tbody>
         <tr>
             <td>
-                <img src=".github/img/Home - Mobile.png" alt="Demonstração do projeto - Home" />
+                <img src="E-Commerce/.github/img/Home - Mobile.png" alt="Demonstração do projeto - Home" />
             </td>
             <td>
-                <img src=".github/img/Cart - Mobile.png" alt="Demonstração do projeto - Cart"  />
+                <img src="E-Commerce/.github/img/Cart - Mobile.png" alt="Demonstração do projeto - Cart"  />
             </td>
             <td>
-                <img src=".github/img/Payment- Mobile.png" alt="Demonstração do projeto - Payment"  />
+                <img src="E-Commerce/.github/img/Payment - Mobile.png" alt="Demonstração do projeto - Payment"  />
             </td>  
         </tr>
     </tbody>
 </table>
+
+## 📚 Projeto
+
+E-commerce de livros responsivo 
+
+## 🚀 Tecnologias
+
+-REACT  
+-CSS
