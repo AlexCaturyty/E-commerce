@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Snackbar } from '@mui/material';
+import InputMask from 'react-input-mask'; // Importe a biblioteca
 
 import '../Payment/Payment.css';
 
@@ -16,44 +17,68 @@ const Payment = () => {
         setTimeout(() => {
             window.location.href = "/home";
         }, 2000); 
-      };
+    };
 
     const AlertClosed = () => {
         setShowPurchaseAlert(false);
-      };
+    };
 
     return (
-        
         <div className='body'>
             <div className='container'>
                 <h1>Tela de Pagamento</h1>
                 <form>
                     <div>
                         <label htmlFor="cardNumber">Número do Cartão:</label>
-                        <input
-                            type="text"
-                            id="cardNumber"
+                        <InputMask
+                            mask="9999 9999 9999 9999"
+                            maskChar=" "
                             value={cardNumber}
                             onChange={(e) => setCardNumber(e.target.value)}
-                        />
+                        >
+                            {(inputProps) => (
+                                <input
+                                    {...inputProps}
+                                    type="text"
+                                    id="cardNumber"
+                                />
+                            )}
+                        </InputMask>
                     </div>
                     <div>
                         <label htmlFor="expiryDate">Data de Validade:</label>
-                        <input
-                            type="text"
-                            id="expiryDate"
+                        <InputMask
+                            mask="99/99"
+                            maskChar=" "
                             value={expiryDate}
                             onChange={(e) => setExpiryDate(e.target.value)}
-                        />
+                        >
+                            {(inputProps) => (
+                                <input
+                                    {...inputProps}
+                                    type="text"
+                                    id="expiryDate"
+                                />
+                            )}
+                        </InputMask>
                     </div>
                     <div>
                         <label htmlFor="cvv">CVV:</label>
-                        <input
-                            type="text"
-                            id="cvv"
+                        {/* Adicione a máscara para o CVV */}
+                        <InputMask
+                            mask="999"
+                            maskChar=" "
                             value={cvv}
                             onChange={(e) => setCvv(e.target.value)}
-                        />
+                        >
+                            {(inputProps) => (
+                                <input
+                                    {...inputProps}
+                                    type="text"
+                                    id="cvv"
+                                />
+                            )}
+                        </InputMask>
                     </div>
                     <div>
                         <label htmlFor="name">Nome no Cartão:</label>
@@ -72,11 +97,11 @@ const Payment = () => {
                 </form>
             </div>
             <Snackbar
-        open={showPurchaseAlert}
-        autoHideDuration={3000}
-        onClose={AlertClosed}
-        message="Produto comprado com sucesso!"
-      />
+                open={showPurchaseAlert}
+                autoHideDuration={3000}
+                onClose={AlertClosed}
+                message="Produto comprado com sucesso!"
+            />
         </div>
     );
 };
